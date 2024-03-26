@@ -1,0 +1,827 @@
+/* Global styles */
+body {
+  font-family: "Playfair Display", serif; /* Replace 'Poppins' with your chosen font */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Add a black overlay */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+}
+
+/* Text at the top left corner */
+.name {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #fff; /* Text color */
+  font-size: 20px; /* Font size */
+  font-weight: bold; /* Font weight */
+  z-index: 9999; /* Ensure it's above other content */
+}
+
+/* Menu Icon styles */
+.menu-icon {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  cursor: pointer;
+}
+
+.bar {
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+/* Menu Icon open state */
+.menu-icon.open .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 7px);
+}
+
+.menu-icon.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-icon.open .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -7px);
+}
+
+/* Full-screen overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(3, 24, 60); /* Semi-transparent black overlay */
+  z-index: 9998;
+  display: none; /* Initially hidden */
+}
+
+.overlay.open {
+  display: block; /* Display when menu is open */
+}
+
+/* Navigation Links */
+.nav-links {
+  position: fixed;
+  top: 13%;
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  z-index: 9999; /* Ensure links are above overlay */
+  display: none; /* Initially hidden */
+}
+
+.nav-links.open {
+  display: block; /* Display when menu is open */
+}
+
+.cancel-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Navigation Link styles */
+.nav-link {
+  display: block;
+  font-size: 4rem; /* Increased font size */
+  font-weight: bolder; /* Bold font weight */
+  color: #888; /* Grey color */
+  padding: 20px;
+  text-decoration: none;
+  transition: color 0.2s; /* Only transition the color property */
+  cursor: pointer; /* Pointer cursor */
+}
+
+.nav-link:hover {
+  color: #fff; /* White text color on hover */
+}
+
+/* Home Section */
+#home {
+  background-image: url("./img/bg18.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  filter: blur();
+  -webkit-filter: blur();
+}
+#home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Black overlay with opacity */
+  z-index: -1; /* Place the overlay behind the text content */
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+h1.aos-init.aos-animate {
+  color: whitesmoke !important;
+  margin-top: 2rem !important;
+}
+
+.arrow-icon {
+  display: block;
+  font-size: 2rem;
+  margin-top: -40px;
+  color: #58cfed;
+}
+
+.home-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+}
+
+p {
+  font-size: 15px;
+  font-weight: bolder;
+  margin-bottom: 40px;
+}
+
+.home-section h1 {
+  margin-top: 9rem;
+  font-size: 3.7rem;
+  line-height: 1.3;
+  color: #fffafa;
+}
+
+/* Blur effect when menu is open */
+body.nav-open {
+  backdrop-filter: blur(10px); /* Adjust the blur radius as needed */
+}
+
+/* CSS for all sections with class "next-section" */
+.next-section {
+  padding: 150px !important;
+  background-color: #0a1f46;
+  color: #fff;
+}
+
+/* CSS for the container within each section */
+.next-section .container {
+  text-align: center;
+}
+
+/* CSS for the flex container within each section */
+.next-section .flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Ensure items wrap to new line if needed */
+}
+
+/* CSS for each paragraph container within each section */
+.next-section .paragraph-container {
+  width: calc(25% - 20px); /* Adjust width as needed */
+  margin: 10px; /* Adjust margin between containers */
+}
+
+/* CSS for each paragraph within each section */
+.next-section .paragraph {
+  font-size: 18px;
+  color: #fff;
+  margin-top: 10px;
+}
+
+/* CSS for the icon within each paragraph */
+.next-section .paragraph i {
+  margin-bottom: 10px; /* Add spacing between icon and text */
+}
+.picon {
+  font-size: 5rem;
+}
+/* CSS for the additional text container */
+.additional-text-container {
+  display: flex;
+  justify-content: space-between; /* Ensure even spacing between items */
+  align-items: center;
+  flex-wrap: wrap; /* Allow wrapping of content */
+  color: #fff; /* Text color */
+  text-align: center;
+}
+
+/* CSS for the intro text */
+.intro-text {
+  font-size: 2.3rem;
+  font-weight: bolder; /* Keeping font weight */
+  width: 24rem;
+  text-align: right; /* Align text to the right */
+}
+
+/* CSS for the passionate text */
+.passionate-text {
+  font-size: 18px;
+  margin-bottom: 20px;
+  flex: 1; /* Take up available space */
+  text-align: left; /* Align text to the left */
+  margin-left: 1.5rem;
+}
+
+
+/* CSS for the information section */
+.information-section {
+  padding: 0px 0;
+}
+
+/* CSS for the container */
+.infocontainer {
+  display: flex;
+  justify-content: space-around;
+  background: linear-gradient(to right, #faf0e6 50%, #040b5a 50%);
+}
+
+/* CSS for the circle containers */
+
+/* CSS for the circle containers */
+.circle-container {
+  display: inline-block;
+  margin: 88px; /* Adjust margin as needed */
+}
+
+/* CSS for the circles */
+.circle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 18rem; /* Adjust width as needed */
+  height: 16rem; /* Adjust height as needed */
+  border: 8px solid transparent; /* Add initial border */
+  border-radius: 50%; /* Make the circle */
+  transition: border-radius 0.3s ease; /* Transition for border-radius */
+}
+
+/* CSS for the blue circle */
+.blue-circle {
+  color: #fff; /* Text color */
+  border-color: #faf0e6; /* Blue border color */
+}
+
+/* CSS for the cream circle */
+.cream-circle {
+  color: #333; /* Text color */
+  border-color: #040b5a; /* Cream border color */
+}
+
+/* CSS for circle text */
+.circle h2,
+.circle p {
+  margin: 0;
+}
+
+/* Hover effect for circles */
+.circle:hover {
+  border-radius: 5px; /* Make the circle square upon hover */
+}
+/* CSS for the anchor link with class "infolink" */
+a.infolink {
+  color: #040b5a; /* Text color */
+  text-decoration: none; /* Remove underline */
+  font-size: 3rem;
+  font-weight: 700;
+  padding: 10px 20px; /* Add padding */
+  border-radius: 5px; /* Add rounded corners */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+a.infolink2 {
+  color: #fceddd;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 3rem;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+/* CSS for the h2 element with class "infotext" */
+h2.infotext1 {
+  color: #040b5a;
+  font-size: 1rem;
+  font-style: italic; /* Set font style to italic */
+}
+h2.infotext2 {
+  color: #fceddd;
+  font-size: 1rem;
+  font-style: italic; /* Set font style to italic */
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .infocontainer {
+    flex-direction: column; /* Stack circles vertically on smaller screens */
+  }
+  
+  .circle-container {
+    flex: 1 1 auto; /* Allow circle containers to take full width */
+    margin: 10px 0; /* Adjust margin for smaller screens */
+  }
+
+  .circle {
+    
+      height: 11rem;
+      width: 11rem;
+     
+  }
+  .blue-circle {
+    margin-top: -14rem;
+    margin-left: 20rem;
+  }
+  .cream-circle {
+    margin-left: 1rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* CSS for the contact form */
+.contact-form {
+  background: linear-gradient(135deg, #1e3c72, #1d3969);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  font-family: "Arial", sans-serif;
+  width: 80%;
+  max-width: 500px;
+  margin: 20px auto;
+  color: #fff; /* Text color */
+  transition: background-color 0.3s ease;
+}
+
+.contact-form:hover {
+  background: linear-gradient(135deg, #051e47, #0a1d3f);
+}
+
+.contactheading {
+  font-weight: bold;
+  color: #333; /* Dark gray color */
+  margin-bottom: 20px;
+  text-align: center; /* Center align the heading */
+  font-family: Playfair Display;
+  font-size: 60px;
+  line-height: 110px;
+  font-weight: 400;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-size: 16px;
+  color: #fff; /* Label color */
+  transition: top 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+  width: 100%;
+  height: 2rem;
+  padding: 15px;
+  border: none;
+  border-bottom: 2px solid #fff; /* Input border color */
+  background-color: transparent;
+  font-size: 16px;
+  color: #fff; /* Input text color */
+  transition: border-color 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+  border-color: #ecf0f1; /* Border color on focus */
+  outline: none;
+}
+
+.form-group input[type="text"]:focus + label,
+.form-group input[type="email"]:focus + label,
+.form-group textarea:focus + label {
+  top: -20px;
+  font-size: 14px;
+  color: #fff; /* Label color on focus */
+}
+
+/* CSS for the button */
+button[type="submit"] {
+  padding: 15px;
+  background: linear-gradient(135deg, #4e73df, #224abe);
+  /*Gradientbackground*/
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.2s;
+
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+}
+
+button[type="submit"]:hover {
+  background: linear-gradient(
+    135deg,
+    #224abe,
+    #4e73df
+  ); /* Gradient background on hover */
+  transform: translateY(-2px); /* Move button slightly up on hover */
+}
+
+/* Placeholder color */
+.contact-form input[type="text"]::placeholder,
+.contact-form input[type="email"]::placeholder,
+.contact-form textarea::placeholder {
+  color: #ccc; /* Placeholder color */
+}
+/* Style for filled input fields */
+/* Style for filled input fields */
+.contact-form input[type="text"]:valid,
+.contact-form input[type="email"]:valid,
+.contact-form textarea:valid {
+  background-color: none; /* Remove background color */
+  border-color: #007bff; /* Change border color */
+}
+/* Style for autofilled input fields */
+.contact-form input:-webkit-autofill {
+  background-color: transparent !important; /* Remove background color */
+  border-color: #007bff !important; /* Change border color */
+}
+
+/* CSS for the footer */
+footer {
+  background-color: #000000; /* Footer background color */
+  color: #fff; /* Text color */
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* CSS for the left side of the footer */
+.footer-left p {
+  margin: 0;
+}
+
+/* CSS for the right side of the footer */
+.footer-right a {
+  color: grey; /* Icon color */
+  text-decoration: none;
+  margin-left: 10px; /* Adjust spacing between icons */
+  transition: color 0.3s ease; /* Smooth transition for icon color */
+}
+
+/* Hover effect for footer icons */
+.footer-right a:hover {
+  color: #fff; /* Change icon color on hover to white */
+}
+
+/* CSS for the back-to-top arrow */
+#back-to-top {
+  font-size: 24px;
+}
+
+/* Additional styling for back-to-top arrow */
+footer p {
+  font-size: small;
+  color: grey;
+}
+/* Add a fade-in transition effect */
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-in.active {
+  opacity: 1;
+}
+
+/* Media Queries for responsiveness */
+
+/* Navigation Links */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    top: 25%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .nav-links {
+    top: 30%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .nav-links {
+    top: 35%;
+  }
+}
+
+/* Home Section */
+@media screen and (max-width: 768px) {
+  #home .home-content h1 {
+    font-size: 3rem;
+  }
+  /* Adjust position for smaller screens */
+  .menu-icon {
+    top: 15px;
+    right: 15px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  #home .home-content h1 {
+    font-size: 2.5rem;
+  }
+    /* Further adjust position for even smaller screens */
+    .menu-icon {
+      top: 10px;
+      right: 10px;
+    }
+  }
+
+
+@media screen and (max-width: 480px) {
+  #home .home-content h1 {
+    font-size: 2rem;
+  }
+   /* Adjust size for the smallest screens */
+   .menu-icon {
+    /* top: 10px;
+    right: 10px; */
+    margin: 7rem;
+    margin-top: auto;
+  }
+  
+  /* Adjust bar size */
+  .bar {
+    width: 20px;
+    height: 2px;
+    margin: 4px 0;
+  }
+  .nav-links {
+    margin-top:-51rem;
+  }
+}
+
+/* Next Section */
+@media screen and (max-width: 768px) {
+  .next-section .paragraph-container {
+    width: calc(50% - 20px);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .next-section .paragraph-container {
+    width: calc(100% - 20px);
+    margin: 10px 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .next-section .paragraph-container {
+    width: calc(100% - 20px);
+    margin: 10px 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .next-section .paragraph {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .next-section .paragraph {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .next-section .paragraph {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .additional-text-container {
+    flex-direction: column;
+  }
+
+  .additional-text-container .intro-text,
+  .additional-text-container .passionate-text {
+    text-align: center;
+    margin-left: -132px;;
+    margin-top: 20px;
+  }
+}
+
+/* Information Section */
+@media screen and (max-width: 768px) {
+  .information-section .infocontainer .circle-container {
+    margin: 20px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .information-section .infocontainer .circle-container {
+    margin: 20px 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .information-section .infocontainer .circle-container {
+    margin: 20px 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .information-section .infocontainer .circle h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .information-section .infocontainer .circle h2 {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .information-section .infocontainer .circle h2 {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .information-section .infocontainer .circle a {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .information-section .infocontainer .circle a {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .information-section .infocontainer .circle a {
+    font-size: 1.2rem;
+  }
+}
+
+/* Contact Section */
+@media screen and (max-width: 768px) {
+  .contact-section .contactheading {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .contact-section .contactheading {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .contact-section .contactheading {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact-section .contact-form {
+    width: 90%;
+    max-width: none;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .contact-section .contact-form {
+    width: 90%;
+    max-width: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .contact-section .contact-form {
+    width: 90%;
+    max-width: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact-section .form-group label {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .contact-section .form-group label {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .contact-section .form-group label {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact-section .form-group input[type="text"],
+  .contact-section .form-group input[type="email"],
+  .contact-section .form-group textarea {
+    height: 40px;
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .contact-section .form-group input[type="text"],
+  .contact-section .form-group input[type="email"],
+  .contact-section .form-group textarea {
+    height: 36px;
+    padding: 8px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .contact-section .form-group input[type="text"],
+  .contact-section .form-group input[type="email"],
+  .contact-section .form-group textarea {
+    height: 36px;
+    padding: 8px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact-section button[type="submit"] {
+    padding: 12px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .contact-section button[type="submit"] {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .contact-section button[type="submit"] {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
