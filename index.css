@@ -256,9 +256,9 @@ body.nav-open {
 
 /* CSS for the container */
 .infocontainer {
-  display: flex;
-  justify-content: space-around;
-  background: linear-gradient(to right, #faf0e6 50%, #040b5a 50%);
+  /* display: flex; */
+  /* justify-content: space-around; */
+  /* background: linear-gradient(to right, #faf0e6 50%, #040b5a 50%); */
 }
 
 /* CSS for the circle containers */
@@ -580,7 +580,7 @@ footer p {
    .menu-icon {
     /* top: 10px;
     right: 10px; */
-    margin: 7rem;
+    /* margin: 7rem; */
     margin-top: auto;
   }
   
@@ -723,7 +723,7 @@ footer p {
 
 @media screen and (max-width: 768px) {
   .contact-section .contact-form {
-    width: 90%;
+    width: 60%;
     max-width: none;
   }
 }
@@ -737,7 +737,7 @@ footer p {
 
 @media screen and (max-width: 480px) {
   .contact-section .contact-form {
-    width: 90%;
+    width: 60%;
     max-width: none;
   }
 }
@@ -818,10 +818,37 @@ footer p {
 }
 
 .projects-section h2 {
-  font-size: 2rem;
+  font-weight: bold;
+  color: #333; /* Dark gray color */
+  margin-bottom: 20px;
+  text-align: center; /* Center align the heading */
+  font-family: Playfair Display;
+  font-size: 60px;
+  line-height: 110px;
+  font-weight: 400;
+}
+
+/* CSS for filter buttons */
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
   margin-bottom: 20px;
 }
 
+.filter-btn {
+  font-size: large;
+  background-color: #040b5a;
+  color: #faf0e6;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.filter-btn:hover {
+  background-color: #333;
+}
 /* CSS for filter buttons */
 .filter-buttons {
   display: flex;
@@ -835,12 +862,13 @@ footer p {
   color: #faf0e6;
   border: none;
   padding: 10px 20px;
+  border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .filter-btn:hover {
-  background-color: #333;
+  background-color: #088a7d;
 }
 
 /* CSS for card container */
@@ -857,7 +885,8 @@ footer p {
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  width: 300px;
+  width: calc(33.33% - 40px); /* Adjust the width according to your layout */
+  max-width: 300px; /* Set a maximum width */
   margin: 20px;
   position: relative;
   transition: transform 0.3s ease;
@@ -880,7 +909,7 @@ footer p {
 }
 
 .card-content h3 {
-  font-size: 1.5rem;
+  font-size: 1.2rem; /* Adjust the font size for smaller screens */
   color: #040b5a;
   margin: 0 0 10px;
 }
@@ -912,18 +941,39 @@ footer p {
 }
 
 .card-button:hover {
-  background-color: #333;
+  background-color: #046178;
 }
 
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
+  .filter-buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .filter-btn {
+    flex: 0 0 auto;
+  }
+
   .card-container {
-    flex-direction: column;
-    align-items: center;
+    justify-content: center; /* Center cards on smaller screens */
   }
 
   .card {
-    width: 100%;
-    margin: 10px 0;
+    width: calc(77% - 40px); /* Two cards per row */
   }
+
+  .card-content h3 {
+    font-size: 1rem; /* Adjust the font size for smaller screens */
+  }
+}
+
+/* CSS for heading Projects */
+.projects-heading {
+  text-align: center;
+  font-size: 2rem;
+  color: #040b5a;
+  margin-bottom: 20px;
+  font-weight: bold;
+  
 }
