@@ -359,24 +359,6 @@ h2.infotext2 {
     margin-left: 1rem;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* CSS for the contact form */
 .contact-form {
   background: linear-gradient(135deg, #1e3c72, #1d3969);
@@ -823,5 +805,125 @@ footer p {
   .contact-section button[type="submit"] {
     padding: 10px;
     font-size: 14px;
+  }
+}
+
+
+/* CSS for projects section */
+.projects-section {
+  padding: 20px;
+  /* background-color: #0a1f46; */
+  color: #faf0e6;
+  text-align: center;
+}
+
+.projects-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* CSS for filter buttons */
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filter-btn {
+  background-color: #040b5a;
+  color: #faf0e6;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.filter-btn:hover {
+  background-color: #333;
+}
+
+/* CSS for card container */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* CSS for individual cards */
+.card {
+  background-color: #faf0e6;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 300px;
+  margin: 20px;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+/* CSS for card image */
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* CSS for card content */
+.card-content {
+  padding: 20px;
+}
+
+.card-content h3 {
+  font-size: 1.5rem;
+  color: #040b5a;
+  margin: 0 0 10px;
+}
+
+.card-content p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.5;
+  margin: 0 0 20px;
+}
+
+/* CSS for card button */
+.card-button {
+  display: none; /* Initially hidden */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #040b5a;
+  color: #faf0e6;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.card:hover .card-button {
+  display: inline-block;
+}
+
+.card-button:hover {
+  background-color: #333;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    margin: 10px 0;
   }
 }
