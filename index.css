@@ -188,6 +188,13 @@ body.nav-open {
   color: #fff;
 }
 
+/* CSS for all sections with class "next-section" */
+.next-section {
+  padding: 150px !important;
+  background-color: #0a1f46;
+  color: #fff;
+}
+
 /* CSS for the container within each section */
 .next-section .container {
   text-align: center;
@@ -868,7 +875,7 @@ footer p {
 }
 
 .filter-btn:hover {
-  background-color: #088a7d;
+  background-color: #03346c;
 }
 
 /* CSS for card container */

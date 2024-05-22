@@ -1,3 +1,4 @@
+
 function toggleMenu() {
   var menuIcon = document.querySelector(".menu-icon");
   var overlay = document.getElementById("overlay");
@@ -32,7 +33,10 @@ function scrollToNextPage() {
   var nextSection = document.getElementById("next");
   nextSection.scrollIntoView({ behavior: "smooth" });
 }
-
+function scrollToNextPage() {
+  const nextSection = document.querySelector('#next');
+  nextSection.scrollIntoView({ behavior: 'smooth' });
+}
 // resume
 document.addEventListener('DOMContentLoaded', function() {
   // Get the anchor tag with class "nav-link" for the resume
