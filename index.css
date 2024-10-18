@@ -14,15 +14,86 @@ body::before {
   background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
 }
 /* Text at the top left corner */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.6);
+  }
+  50% {
+    text-shadow: 0 0 40px rgba(255, 255, 255, 1), 0 0 60px rgba(255, 255, 255, 0.9);
+  }
+}
+
 .name {
   position: absolute;
   top: 20px;
   left: 20px;
-  color: #fff; /* Text color */
-  font-size: 20px; /* Font size */
-  font-weight: bold; /* Font weight */
-  z-index: 9999; /* Ensure it's above other content */
+  font-size: 1rem; /* Responsive size for emphasis */
+  font-weight: 700; /* Bold weight for impact */
+  z-index: 9999;
+
+  /* Colorful gradient text */
+  background: linear-gradient(90deg, #ff5f6d, #ffc371, #42e695, #3b82f6);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  padding: 10px 15px; /* Padding for spacing */
+  border-radius: 8px; /* Smooth rounded corners */
+
+  /* Subtle shadow */
+  box-shadow: 0 4px 15px rgba(1, 87, 61, 0.2);
+
+  /* Animation effects */
+  animation: fadeInUp 1s ease-out, gradientShift 8s ease infinite, glowPulse 3s ease infinite;
+  
+  transition: transform 0.4s ease, filter 0.3s ease, text-shadow 0.3s ease;
 }
+
+.name:hover {
+  transform: translateY(-10px); /* Gentle lift on hover */
+  filter: brightness(1.5); /* Brighter glow effect */
+  /* text-shadow: 0 0 30px rgb(29, 23, 23), 0 0 60px rgba(255, 255, 255, 0.8); Enhanced glow */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .name {
+    
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .name {
+    
+    padding: 6px 10px;
+  }
+}
+
 /* Menu Icon styles */
 .menu-icon {
   position: fixed;
