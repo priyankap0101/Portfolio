@@ -41,28 +41,20 @@ body::before {
   position: absolute;
   top: 20px;
   left: 20px;
-  font-size: 1rem; /* Responsive size for emphasis */
-  font-weight: 700; /* Bold weight for impact */
-  z-index: 9999;
-
-  /* Colorful gradient text with enhanced contrast for dark background */
-  background: linear-gradient(90deg, #ff5f6d, #ffc371, #42e695, #3b82f6);
+  font-size: 1rem;
+  /*Responsivesizeforemphasis*/font-weight: 700;
+  /*Boldweightforimpact*/z-index: 9999;
+  /*Colorfulgradienttextwithenhancedcontrastfordarkbackground*/background: linear-gradient(90deg, #ff5f6d, #ffc371, #42e695, #3b82f6);
   background-size: 300% 300%;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-
-  padding: 10px 15px; /* Padding for spacing */
-  border-radius: 8px; /* Smooth rounded corners */
-
-  /* Subtle shadow for text */
-  text-shadow: 0 2px 5px rgba(255, 255, 255, 0.15); /* Light shadow to enhance readability */
-
-  /* Animation effects */
-  animation: fadeInUp 1s ease-out, gradientShift 8s ease infinite,
-    glowPulse 3s ease infinite;
-
+  padding: 10px 15px;
+  /*Paddingforspacing*/border-radius: 8px;
+  /*Smoothroundedcorners*//*Subtleshadowfortext*/text-shadow: 0 2px 5px rgba(255, 255, 255, 0.15);
+  /*Lightshadowtoenhancereadability*//*Animationeffects*/animation: fadeInUp 1s ease-out, gradientShift 8s ease infinite,    glowPulse 3s ease infinite;
   transition: transform 0.4s ease, filter 0.3s ease, text-shadow 0.3s ease;
+  -webkit-animation: fadeInUp 1s ease-out, gradientShift 8s ease infinite,;
 }
 
 .name:hover {
